@@ -20,7 +20,7 @@ class rg_func {
 
 rg_func::rg_func()
 {
-  r = new interpolator("/Users/endres/Documents/MIT/research/bdeop/endres/ising/code_v0.7/Mathematica/migdal_kadanoff.dat");
+  r = new interpolator("migdal_kadanoff.dat");
 }
 
 rg_func::~rg_func()
