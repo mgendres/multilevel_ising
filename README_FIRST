@@ -1,8 +1,13 @@
 Ising model in two dimensions with periodic boundary conditions
+Libraries include:
+  -- heat-bath updating methods on full and subattices
+  -- Wolff cluster updating on full and sublattice
+  -- functions for coarse-graining lattices
+  -- function for refining lattices
 
 Test programs are located in the tests directory, production programs are located in the porduction directory.
 
-To compile. enter into a test/production subdirectory:
+To compile. enter into a test or production subdirectory, e.g.,
 
 cd tests/interpolator
 

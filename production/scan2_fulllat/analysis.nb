@@ -1,0 +1,211 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7822,        203]
+NotebookOptionsPosition[      7247,        179]
+NotebookOutlinePosition[      7623,        196]
+CellTagsIndexPosition[      7580,        193]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Scans", "Section",
+ CellChangeTimes->{{3.5711114184020767`*^9, 3.571111418992846*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "NotebooksPath", "=", 
+   "\"\</Users/endres/Documents/MIT/research/bdeop/endres/ising/code_v0.7/\
+Mathematica/\>\""}], ";"}]], "Input",
+ CellChangeTimes->{{3.595851658620761*^9, 3.595851705410939*^9}, {
+  3.62887484536057*^9, 3.6288748485901403`*^9}, {3.6294609968990593`*^9, 
+  3.629460996998427*^9}}],
+
+Cell[BoxData[
+ RowBox[{"NotebookEvaluate", "[", 
+  RowBox[{"NotebooksPath", "<>", "\"\</ising.nb\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.628874868484182*^9, 3.6288748723633537`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "path", "=", 
+   "\"\</Users/endres/Documents/MIT/research/bdeop/endres/ising/code_v0.7/\
+tests/scan2_fulllat/data\>\""}], ";"}]], "Input",
+ CellChangeTimes->{{3.571108171634748*^9, 3.571108192771062*^9}, {
+   3.5711151134935503`*^9, 3.571115113573044*^9}, 3.6282606862851152`*^9, {
+   3.628272075910886*^9, 3.628272080074477*^9}, {3.628276895504327*^9, 
+   3.628276895593114*^9}, {3.6284211092708473`*^9, 3.628421117419148*^9}, {
+   3.628433428681162*^9, 3.628433430290649*^9}, 3.628437145384111*^9, {
+   3.628871545972929*^9, 3.628871546056697*^9}, {3.628872065719702*^9, 
+   3.628872066699225*^9}, {3.628876752398314*^9, 3.628876753354155*^9}, {
+   3.629460994961954*^9, 3.6294610016823587`*^9}, 3.629465663617841*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"GetMagnetization", "[", 
+    RowBox[{"path", "<>", "\"\</magnetization.dat\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", "=", 
+   RowBox[{"GetHamiltonian", "[", 
+    RowBox[{"path", "<>", "\"\</hamiltonian.dat\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"GetCorrelator", "[", 
+    RowBox[{"path", "<>", "\"\</correlator.dat\>\""}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.62887203923555*^9, 3.628872057520615*^9}, {
+   3.628872292147505*^9, 3.628872298106553*^9}, {3.628872330046781*^9, 
+   3.628872345036571*^9}, 3.6288724722597218`*^9, {3.628873583642256*^9, 
+   3.6288735905652533`*^9}, {3.628874005034651*^9, 3.628874011769436*^9}, 
+   3.628874133911726*^9, {3.62894480965027*^9, 3.62894480984237*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ErrorListPlot", "[", 
+  RowBox[{"m", ",", "\[IndentingNewLine]", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<K\>\"", ",", "\"\<M\>\""}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Epilog", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Black", ",", "Dashed", ",", "Thick", ",", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Kcrit", ",", 
+           RowBox[{"-", "2"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Kcrit", ",", "2"}], "}"}]}], "}"}], "]"}]}], "}"}]}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.628261778093609*^9, 3.628261794514036*^9}, {
+   3.628261825317527*^9, 3.628261829987404*^9}, {3.6282620121933327`*^9, 
+   3.628262019482378*^9}, {3.6282620835957613`*^9, 3.628262086157875*^9}, {
+   3.628262243289303*^9, 3.6282622441939297`*^9}, {3.628265189164727*^9, 
+   3.628265191249741*^9}, {3.628268191355854*^9, 3.6282681997825823`*^9}, {
+   3.628268392991642*^9, 3.628268393138619*^9}, {3.6282684259692698`*^9, 
+   3.628268426122669*^9}, 3.6282685091215277`*^9, {3.6283523552324257`*^9, 
+   3.628352371506563*^9}, {3.628421359977343*^9, 3.628421377320075*^9}, {
+   3.628421792368539*^9, 3.628421806588106*^9}, {3.628421874743682*^9, 
+   3.6284218810896683`*^9}, {3.6284347900780993`*^9, 3.62843481203584*^9}, 
+   3.628435404391715*^9, 3.628437169434774*^9, {3.628437202849978*^9, 
+   3.628437212537294*^9}, {3.628440320824526*^9, 3.628440323381434*^9}, 
+   3.628870639939959*^9, 3.628872356542274*^9, {3.628872486073246*^9, 
+   3.628872486441622*^9}, {3.62887259154705*^9, 3.6288725923504877`*^9}, {
+   3.6288729428097267`*^9, 3.628872969937996*^9}, {3.6288730138337173`*^9, 
+   3.628873014933731*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ErrorListPlot", "[", 
+  RowBox[{"h", ",", "\[IndentingNewLine]", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<K\>\"", ",", "\"\<E\>\""}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Epilog", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Black", ",", "Dashed", ",", "Thick", ",", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Kcrit", ",", 
+           RowBox[{"-", "2"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"Kcrit", ",", "2"}], "}"}]}], "}"}], "]"}]}], "}"}]}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{
+  3.628268515095159*^9, {3.628352086942781*^9, 3.628352092677718*^9}, {
+   3.6283523769620743`*^9, 3.628352379572069*^9}, {3.628427151106666*^9, 
+   3.628427161265944*^9}, {3.628434838430849*^9, 3.628434862212397*^9}, 
+   3.628435409074005*^9, 3.628437176417946*^9, {3.62844032801353*^9, 
+   3.628440330116659*^9}, 3.6288706466738377`*^9, {3.6288724785197678`*^9, 
+   3.6288724827807417`*^9}, {3.628873017712883*^9, 3.6288730296816196`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"GraphicsRow", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"ErrorListPlot", "[", 
+      RowBox[{
+       RowBox[{"c", "[", 
+        RowBox[{"[", 
+         RowBox[{"k", ",", "2"}], "]"}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.05"}], ",", "1"}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"\"\<K = \>\"", "<>", 
+         RowBox[{"ToString", "[", 
+          RowBox[{"c", "[", 
+           RowBox[{"[", 
+            RowBox[{"k", ",", "1"}], "]"}], "]"}], "]"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FrameLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<\[Tau]\>\"", ",", "\"\<Log C\>\""}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "35", ",", "55"}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", ",", 
+   RowBox[{"Spacings", "\[Rule]", 
+    RowBox[{"-", "75"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.628874226932926*^9, 3.628874228263191*^9}, {
+  3.6288743454924498`*^9, 3.628874415199898*^9}, {3.628874556855125*^9, 
+  3.628874619073189*^9}, {3.628874923772686*^9, 3.6288749418825483`*^9}, {
+  3.628875386508165*^9, 3.628875417397133*^9}, {3.628881775922402*^9, 
+  3.628881776858488*^9}, {3.628944840298388*^9, 3.628944841414322*^9}, {
+  3.629471898903714*^9, 3.629471908362678*^9}}]
+}, Open  ]]
+},
+Evaluator->"Local",
+WindowSize->{1087, 662},
+WindowMargins->{{101, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 92, 1, 64, "Section"],
+Cell[674, 25, 340, 8, 28, "Input"],
+Cell[1017, 35, 189, 3, 28, "Input"],
+Cell[1209, 40, 758, 13, 28, "Input"],
+Cell[1970, 55, 855, 20, 63, "Input"],
+Cell[2828, 77, 1781, 34, 80, "Input"],
+Cell[4612, 113, 1111, 25, 80, "Input"],
+Cell[5726, 140, 1505, 36, 131, "Input"]
+}, Open  ]]
+}
+]
+*)
+
