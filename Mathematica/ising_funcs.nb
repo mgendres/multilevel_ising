@@ -1,0 +1,478 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     17537,        470]
+NotebookOptionsPosition[     16754,        439]
+NotebookOutlinePosition[     17110,        455]
+CellTagsIndexPosition[     17067,        452]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Defaults", "Section",
+ CellChangeTimes->{{3.628265176547806*^9, 3.628265177894039*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$HistoryLength", "=", "1"}], ";"}]], "Input",
+ CellChangeTimes->{{3.629217085924498*^9, 3.629217086820621*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<ErrorBarPlots`\>\"", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetDefaultPlotOptions", "[", "plotType_", "]"}], ":=", 
+   RowBox[{"SetOptions", "[", 
+    RowBox[{"plotType", ",", "\[IndentingNewLine]", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"Thick", ",", 
+         RowBox[{"PointSize", "[", "0.01", "]"}]}], "}"}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Frame", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Axes", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"False", ",", "False"}], "}"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"AxesStyle", "\[Rule]", "Thick"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"FrameStyle", "\[Rule]", "Thick"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ImageSize", "->", "600"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"LabelStyle", "->", 
+      RowBox[{"Directive", "[", "22", "]"}]}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{
+  3.593529883630768*^9, {3.593952005095304*^9, 3.593952008278678*^9}, {
+   3.593952061668313*^9, 3.593952111169042*^9}, {3.593952162728737*^9, 
+   3.593952186341076*^9}, {3.5939526395848703`*^9, 3.5939526416245117`*^9}, {
+   3.59395558694696*^9, 3.593955589220172*^9}, {3.5940414946058483`*^9, 
+   3.594041496406492*^9}, {3.594042420447613*^9, 3.594042422611834*^9}, {
+   3.628872883655363*^9, 3.628872884279458*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDefaultPlotOptions", "[", "Plot", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDefaultPlotOptions", "[", "ListLogPlot", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDefaultPlotOptions", "[", "ListPlot", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDefaultPlotOptions", "[", "ErrorListPlot", "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.593952128904454*^9, 3.5939521341209507`*^9}, {
+  3.593952274635358*^9, 3.5939522771769543`*^9}, {3.593952421306566*^9, 
+  3.593952425347988*^9}, {3.59395264719627*^9, 3.593952649491335*^9}, {
+  3.596385521990856*^9, 3.5963855252913094`*^9}, {3.5963855740158157`*^9, 
+  3.5963856101282053`*^9}, {3.6288728759242077`*^9, 3.628872887695737*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Kcrit", "=", 
+  RowBox[{
+   RowBox[{"Log", "[", 
+    RowBox[{"1", "+", 
+     RowBox[{"Sqrt", "[", "2", "]"}]}], "]"}], "/", "2."}]}]], "Input",
+ CellChangeTimes->{
+  3.628261380787471*^9, {3.628261809938912*^9, 3.628261832551415*^9}}],
+
+Cell[BoxData["0.44068679350977147`"], "Output",
+ CellChangeTimes->{{3.628261378575108*^9, 3.6282613811257877`*^9}, 
+   3.628261533099415*^9, {3.628261812589657*^9, 3.6282618369633102`*^9}, 
+   3.6282619771161537`*^9, 3.628262079594014*^9, 3.628262220708549*^9, {
+   3.628262628271289*^9, 3.628262650084187*^9}, 3.6282630227263727`*^9, 
+   3.628265182247733*^9, 3.628267611543007*^9, 3.628267838551362*^9, 
+   3.628268119659925*^9, 3.62827208637325*^9, {3.6282768866945457`*^9, 
+   3.62827689819655*^9}, 3.6283481644868603`*^9, 3.628348630725718*^9, 
+   3.628349324493382*^9, 3.628349711146076*^9, 3.628351574838244*^9, 
+   3.628351633870943*^9, 3.6283517536532507`*^9, 3.628352041278426*^9, 
+   3.628352221542418*^9, 3.6283523029975367`*^9, {3.6283524043417873`*^9, 
+   3.628352424162693*^9}, 3.6283527091384487`*^9, 3.628353566481896*^9, 
+   3.628353718338818*^9, 3.628353796525217*^9, {3.628356442392749*^9, 
+   3.628356452945759*^9}, 3.628356643395461*^9, 3.628356684773944*^9, 
+   3.628356929554864*^9, 3.6284211190748796`*^9, 3.628421860421174*^9, 
+   3.628422080961853*^9, 3.6284270634145412`*^9, {3.628433422230144*^9, 
+   3.628433432081901*^9}, 3.628433620481645*^9, 3.628434703250658*^9, 
+   3.628434780239315*^9, 3.628435123379189*^9, 3.628437149265133*^9, 
+   3.628439508072969*^9, 3.628439638441369*^9, 3.628439720295227*^9, 
+   3.628440336275876*^9, 3.628440563922041*^9, 3.628871969703376*^9, 
+   3.628872668446575*^9, 3.628872932764944*^9, 3.628873001759184*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Importer functions", "Section",
+ CellChangeTimes->{{3.628872985430419*^9, 3.6288729904075937`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GetMagnetization", "[", "magnetizationFile_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"rawDat", ",", "Kvals", ",", "dat", ",", "m", ",", "dm"}], "}"}],
+     ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"rawDat", "=", 
+      RowBox[{"Import", "[", 
+       RowBox[{"magnetizationFile", ",", "\"\<Table\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Kvals", "=", 
+      RowBox[{"Tally", "[", 
+       RowBox[{"rawDat", "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"dat", "=", 
+      RowBox[{"GatherBy", "[", 
+       RowBox[{"rawDat", ",", "First"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"m", "=", 
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Mean", "[", 
+          RowBox[{"Abs", "@", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", "2"}], "]"}], "]"}]}], "]"}], "&"}], ",", 
+        "dat"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"dm", "=", 
+      RowBox[{
+       RowBox[{"Map", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"StandardDeviation", "[", 
+           RowBox[{"Abs", "@", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", "2"}], "]"}], "]"}]}], "]"}], "&"}], ",", 
+         "dat"}], "]"}], "/", 
+       RowBox[{"Sqrt", "@", 
+        RowBox[{"Kvals", "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "2"}], "]"}], "]"}]}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Return", "@", 
+      RowBox[{"Transpose", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Kvals", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "1"}], "]"}], "]"}], ",", "m", ",", "dm"}], 
+        "}"}]}]}], ";"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.62887197849166*^9, 3.628872035180119*^9}, {
+  3.628872079014098*^9, 3.628872100403788*^9}, {3.628872142240131*^9, 
+  3.6288721425586777`*^9}, {3.628872213751773*^9, 3.628872250127017*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GetHamiltonian", "[", "hamiltonianFile_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"rawDat", ",", "Kvals", ",", "dat", ",", "h", ",", "dh"}], "}"}],
+     ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"rawDat", "=", 
+      RowBox[{"Import", "[", 
+       RowBox[{"hamiltonianFile", ",", "\"\<Table\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Kvals", "=", 
+      RowBox[{"Tally", "[", 
+       RowBox[{"rawDat", "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"dat", "=", 
+      RowBox[{"GatherBy", "[", 
+       RowBox[{"rawDat", ",", "First"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"h", "=", 
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Mean", "[", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", 
+            RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}], "&"}], ",", 
+        "dat"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"dh", "=", 
+      RowBox[{
+       RowBox[{"Map", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"StandardDeviation", "[", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}], "&"}], ",", 
+         "dat"}], "]"}], "/", 
+       RowBox[{"Sqrt", "@", 
+        RowBox[{"Kvals", "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "2"}], "]"}], "]"}]}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Return", "@", 
+      RowBox[{"Transpose", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Kvals", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "1"}], "]"}], "]"}], ",", "h", ",", "dh"}], 
+        "}"}]}]}], ";"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.628872319058632*^9, 3.6288723217699957`*^9}, {
+  3.6288724469725018`*^9, 3.628872459798316*^9}, {3.6288725293088713`*^9, 
+  3.6288725381085663`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "The", " ", "errors", " ", "on", " ", "this", " ", "are", " ", "probably", 
+    " ", 
+    RowBox[{"underestimated", " ", "--"}], " ", "autocorrelations", " ", 
+    "are", " ", "not", " ", "accounted", " ", "for"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"GetCorrelator", "[", 
+    RowBox[{"correlatorFile_", ",", "magnetizationFile_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "rawCorrDat", ",", "rawMagDat", ",", "corrDat", ",", "magDat", ",", 
+       "Kvals", ",", "c", ",", "dc", ",", "m", ",", "dm"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"rawCorrDat", "=", 
+       RowBox[{"Import", "[", 
+        RowBox[{"correlatorFile", ",", "\"\<Table\>\""}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"rawMagDat", "=", 
+       RowBox[{"Import", "[", 
+        RowBox[{"magnetizationFile", ",", "\"\<Table\>\""}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Kvals", "=", 
+       RowBox[{"Tally", "[", 
+        RowBox[{"rawCorrDat", "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"corrDat", "=", 
+       RowBox[{"GatherBy", "[", 
+        RowBox[{"rawCorrDat", ",", "First"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"magDat", "=", 
+       RowBox[{"GatherBy", "[", 
+        RowBox[{"rawMagDat", ",", "First"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"c", "=", 
+       RowBox[{
+        RowBox[{"Map", "[", 
+         RowBox[{"Mean", ",", "corrDat"}], "]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", 
+          RowBox[{"2", ";;", 
+           RowBox[{"-", "1"}]}]}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"dc", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Map", "[", 
+          RowBox[{"StandardDeviation", ",", "corrDat"}], "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", 
+           RowBox[{"2", ";;", 
+            RowBox[{"-", "1"}]}]}], "]"}], "]"}], "/", 
+        RowBox[{"Sqrt", "@", 
+         RowBox[{"Kvals", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "2"}], "]"}], "]"}]}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"m", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Mean", "[", 
+           RowBox[{"Abs", "@", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", "2"}], "]"}], "]"}]}], "]"}], "&"}], ",", 
+         "magDat"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"dm", "=", 
+       RowBox[{
+        RowBox[{"Map", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"StandardDeviation", "[", 
+            RowBox[{"Abs", "@", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", 
+               RowBox[{"All", ",", "2"}], "]"}], "]"}]}], "]"}], "&"}], ",", 
+          "magDat"}], "]"}], "/", 
+        RowBox[{"Sqrt", "@", 
+         RowBox[{"Kvals", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "2"}], "]"}], "]"}]}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Return", "@", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Kvals", "[", 
+           RowBox[{"[", 
+            RowBox[{"All", ",", "1"}], "]"}], "]"}], ",", 
+          RowBox[{"MapThread", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Transpose", "@", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Log", "[", 
+                 RowBox[{"#1", "-", 
+                  RowBox[{"#3", "^", "2"}]}], "]"}], ",", 
+                RowBox[{
+                 RowBox[{"Sqrt", "[", 
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"#2", "^", "2"}], "+", 
+                    RowBox[{"4", 
+                    RowBox[{"#3", "^", "2"}], 
+                    RowBox[{"#4", "^", "2"}]}]}], ")"}], "]"}], "/", 
+                 RowBox[{"(", 
+                  RowBox[{"#1", "-", 
+                   RowBox[{"#3", "^", "2"}]}], ")"}]}]}], "}"}]}], "&"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"c", ",", "dc", ",", "m", ",", "dm"}], "}"}]}], "]"}]}], 
+         "}"}], "]"}]}], ";"}]}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.628873130382366*^9, 3.628873174695957*^9}, {
+  3.628873336320932*^9, 3.628873410016082*^9}, {3.628873490513257*^9, 
+  3.628873518289568*^9}, {3.6288735670953827`*^9, 3.628873576456266*^9}, {
+  3.6288736416792088`*^9, 3.628873736476726*^9}, {3.628873819585537*^9, 
+  3.628873829200317*^9}, {3.628873864511376*^9, 3.628873928983307*^9}, {
+  3.628873974856143*^9, 3.628874215612945*^9}, {3.6288743206194363`*^9, 
+  3.628874323541555*^9}, {3.628874443112842*^9, 3.6288744818805428`*^9}, {
+  3.628874514573702*^9, 3.6288745163176727`*^9}, {3.6289443661764727`*^9, 
+  3.6289443878294973`*^9}, {3.6791296774546137`*^9, 3.679129690921129*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GetCorrelator", "[", "correlatorFile_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "rawCorrDat", ",", "corrDat", ",", "Kvals", ",", "c", ",", "dc", ",", 
+      "m", ",", "dm"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"rawCorrDat", "=", 
+      RowBox[{"Import", "[", 
+       RowBox[{"correlatorFile", ",", "\"\<Table\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Kvals", "=", 
+      RowBox[{"Tally", "[", 
+       RowBox[{"rawCorrDat", "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"corrDat", "=", 
+      RowBox[{"GatherBy", "[", 
+       RowBox[{"rawCorrDat", ",", "First"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"c", "=", 
+      RowBox[{
+       RowBox[{"Map", "[", 
+        RowBox[{"Mean", ",", "corrDat"}], "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"All", ",", 
+         RowBox[{"2", ";;", 
+          RowBox[{"-", "1"}]}]}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"dc", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Map", "[", 
+         RowBox[{"StandardDeviation", ",", "corrDat"}], "]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", 
+          RowBox[{"2", ";;", 
+           RowBox[{"-", "1"}]}]}], "]"}], "]"}], "/", 
+       RowBox[{"Sqrt", "@", 
+        RowBox[{"Kvals", "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "2"}], "]"}], "]"}]}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Return", "@", 
+      RowBox[{"Transpose", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Kvals", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "1"}], "]"}], "]"}], ",", 
+         RowBox[{"MapThread", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Transpose", "@", 
+             RowBox[{"{", 
+              RowBox[{"#1", ",", "#2"}], "}"}]}], "&"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"c", ",", "dc"}], "}"}]}], "]"}]}], "}"}], "]"}]}], 
+     ";"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.628943617390272*^9, 3.628943654066753*^9}, {
+  3.62894408938258*^9, 3.62894409185996*^9}}]
+}, Open  ]]
+},
+WindowSize->{1087, 662},
+WindowMargins->{{Automatic, -17}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 93, 1, 64, "Section"],
+Cell[675, 25, 146, 3, 28, "Input"],
+Cell[824, 30, 79, 1, 28, "Input"],
+Cell[906, 33, 1402, 28, 165, "Input"],
+Cell[2311, 63, 782, 17, 80, "Input"],
+Cell[CellGroupData[{
+Cell[3118, 84, 258, 7, 28, "Input"],
+Cell[3379, 93, 1477, 20, 28, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4905, 119, 105, 1, 64, "Section"],
+Cell[5013, 122, 2153, 59, 148, "Input"],
+Cell[7169, 183, 2035, 57, 148, "Input"],
+Cell[9207, 242, 5169, 128, 352, "Input"],
+Cell[14379, 372, 2359, 64, 216, "Input"]
+}, Open  ]]
+}
+]
+*)
+

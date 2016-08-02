@@ -1,0 +1,12 @@
+Ising model in two dimensions with periodic boundary conditions
+
+Test programs are located in the tests directory, production programs are located in the porduction directory.
+
+To compile. enter into a test/production subdirectory:
+
+cd tests/interpolator
+
+and run:
+
+../../make.sh main.C
+
