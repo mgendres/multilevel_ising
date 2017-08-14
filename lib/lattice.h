@@ -62,6 +62,9 @@ class lattice
     double magnetization(int);
     double hamiltonian(int);
 
+    int &elem(int i, int j);
+
+
     friend std::ostream& operator<< (std::ostream &, lattice &);
 
     friend bool copy(const lattice&, lattice&);

@@ -507,6 +507,11 @@ void lattice::print_lattice(char up, char dn, char tb, char lr)
 
 }
 
+int & lattice::elem(int i, int j) {
+  return lat[i][j];
+}
+ 
+
 void lattice::print_cluster()
 {
   for (int i=0; i<nx; ++i) {
